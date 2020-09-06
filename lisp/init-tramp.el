@@ -21,7 +21,7 @@
 
 (with-eval-after-load 'tramp
   (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
-  (add-to-list 'tramp-remote-path '("/data/sailsxu/vas_go_proj/bin" "/data/sailsxu/go_proj/bin" "/usr/local/go/bin"))
+  (add-to-list 'tramp-remote-path '("/var/lib/snapd/snap/bin" "/usr/bin"))
   )
 
 

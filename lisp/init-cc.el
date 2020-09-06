@@ -23,15 +23,15 @@
             (google-make-newline-indent)
 
             ;; flycheck 设置
-            (flycheck-mode 1)
-            (require 'flycheck-google-cpplint)
-            (setq flycheck-clang-language-standard "c++11")
-            (flycheck-add-next-checker 'c/c++-cppcheck
-                                       '(warning . c/c++-googlelint))
-            (flycheck-select-checker 'c/c++-cppcheck)
-            (setq flycheck-cppcheck-checks (quote ("style" "all")))
-            (setq flycheck-googlelint-filter "-legal/copyright,-build/include_subdir")
-            (setq flycheck-googlelint-linelength "100")
+            ;; (flycheck-mode 1)
+            ;; (require 'flycheck-google-cpplint)
+            ;; (setq flycheck-clang-language-standard "c++11")
+            ;; (flycheck-add-next-checker 'c/c++-cppcheck
+            ;;                            '(warning . c/c++-googlelint))
+            ;; (flycheck-select-checker 'c/c++-cppcheck)
+            ;; (setq flycheck-cppcheck-checks (quote ("style" "all")))
+            ;; (setq flycheck-googlelint-filter "-legal/copyright,-build/include_subdir")
+            ;; (setq flycheck-googlelint-linelength "100")
 
             ;; company
             ;; company-mode 如果太慢执行company-diag查看backend
@@ -68,8 +68,8 @@
 
             (with-eval-after-load 'lsp-mode (lsp-register-client
                                              (make-lsp-client
-                                              :new-connection (lsp-tramp-connection "/usr/local/bin/clangd")
-                                              ;; :new-connection (lsp-tramp-connection "/usr/local/bin/ccls")
+                                              :new-connection (lsp-tramp-connection "clangd")
+                                              ;; :new-connection (lsp-tramp-connection "/var/lib/snapd/snap/bin/ccls")
                                               :major-modes '(c-mode c++-mode)
                                               :remote? t
                                               :server-id 'c++-remote)))
